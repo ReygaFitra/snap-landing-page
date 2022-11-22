@@ -26,9 +26,9 @@ const Navbar = () => {
       <div className="md:hidden p-2">
         <RiMenuFill className="w-7 h-7" />
       </div>
-      <div className="hidden md:flex space-x-4 text-[#B2B2B2] font-semibold drop-shadow-sm">
-        <button className="py-2 px-3 hover:text-lg hover:text-black hover:font-bold duration-200">Log in</button>
-        <button className="py-2 px-3 rounded-xl border-2 border-black hover:bg-black hover:text-white duration-200 ease-in">Register</button>
+      <div className="hidden md:flex space-x-4 font-semibold drop-shadow-sm">
+        <button className="py-2 px-3 text-[#B2B2B2] hover:text-lg hover:text-black hover:font-bold duration-200">Log in</button>
+        <button className="py-2 px-3 text-black rounded-xl border-2 border-black hover:bg-black hover:text-white duration-200 ease-in">Register</button>
       </div>
     </div>
   );
