@@ -21,10 +21,10 @@ const NavBtn = ({ title, arrow }) => {
             {title}
             <MdOutlineKeyboardArrowDown className="group-hover:translate-y-[0.18rem] duration-100 ease-out" />
           </Menu.Button>
-          <Menu.Items className="absolute top-full shadow-xl bg-white w-56">
+          <Menu.Items className="absolute top-full w-60 bg-white shadow-lg flex flex-col">
             {links.map((link) => (
               /* Use the `active` state to conditionally style the active item. */
-              <Menu.Item key={link.href} as={Fragment} className="py-3 px-6 flex hover:bg-black hover:text-white">
+              <Menu.Item key={link.href} as={Fragment} className="p-2 border-b-2 hover:bg-black hover:text-white">
                 {({ active }) => (
                   <a href={link.href} className={`${active ? 'bg-blue-500 text-white' : 'bg-white text-black'}`}>
                     {link.label}
@@ -35,16 +35,6 @@ const NavBtn = ({ title, arrow }) => {
           </Menu.Items>
         </Menu>
       </div>
-
-      {/* <div>
-        {isActive && (
-          <div className="w-full h-auto p-10 m-auto bg-blue-200 absolute">
-            <div>
-              <p>testing dropdown</p>
-            </div>
-          </div>
-        )}
-      </div> */}
     </div>
   );
 };

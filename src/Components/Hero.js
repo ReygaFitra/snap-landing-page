@@ -10,12 +10,12 @@ const Hero = () => {
   const textContents = [{ title: 'Make Remote Work', content: 'Get your team in sync. No matter your location. streamline the processes. Create team rituals. and Watch productivity soar' }];
 
   return (
-    <div className="box-border relative">
+    <div className="box-border">
       <div className="md:hidden">
         <img src={heroMobile} />
       </div>
 
-      <div className="text-center md:text-start md:py-0 md:flex md:w-[100%] md:h-[100vh] md:px-5 box-border absolute">
+      <div className="text-center md:text-start md:py-0 md:flex md:w-[100%] md:h-[100vh] md:px-5 box-border">
         <div className="md:w-[100%] md:py-32 ">
           {textContents.map((textContent) => (
             <TextContents title={textContent.title} content={textContent.content} />
