@@ -7,11 +7,10 @@ const Navbar = () => {
   const buttons = [
     { title: 'Features', arrow: true },
     { title: 'Company', arrow: true },
-    { title: 'Careers', arrow: false },
-    { title: 'About', arrow: false },
   ];
+
   return (
-    <div className="w-100vw flex justify-between md:justify-evenly lg:justify-between md:px-8 md:py-2 items-center">
+    <div className="w-[100vw] flex justify-between md:justify-evenly lg:justify-between md:px-8 md:py-2 items-center">
       {/* left */}
       <div className="relative p-4 items-center flex md:w-auto md:h-3">
         <SvgLogo className="object-cover cursor-pointer" />
@@ -19,6 +18,16 @@ const Navbar = () => {
           {buttons.map((button) => (
             <NavBtn title={button.title} arrow={button.arrow} />
           ))}
+          <div>
+            <a href="#" className="font-bold drop-shadow-sm hover:text-black duration-200 text-[#B2B2B2]">
+              Careers
+            </a>
+          </div>
+          <div>
+            <a href="#" className="font-bold drop-shadow-sm hover:text-black duration-200 text-[#B2B2B2]">
+              About
+            </a>
+          </div>
         </ul>
       </div>
 

@@ -11,6 +11,7 @@ const NavBtn = ({ title, arrow }) => {
     { href: '/reminders', label: 'Reminders' },
     { href: '/planing', label: 'Planing' },
   ];
+
   return (
     <div className="flex items-center group cursor-pointer font-bold drop-shadow-sm ">
       {/* <div onClick={(e) => setIsActive(!isActive)}>{title}</div> */}

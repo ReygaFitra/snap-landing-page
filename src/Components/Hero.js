@@ -5,6 +5,7 @@ import TextContents from './TextContents';
 import SvgAudioPhile from './SvgAudioPhile';
 import SvgMeet from './SvgMeet';
 import SvgMaker from './SvgMaker';
+import HeroBtn from './HeroBtn';
 
 const Hero = () => {
   const textContents = [{ title: 'Make Remote Work', content: 'Get your team in sync. No matter your location. streamline the processes. Create team rituals. and Watch productivity soar' }];
@@ -20,7 +21,10 @@ const Hero = () => {
           {textContents.map((textContent) => (
             <TextContents title={textContent.title} content={textContent.content} />
           ))}
-          <button className="px-4 py-2 bg-black text-white rounded-xl my-4 md:mx-10 md:px-6 md:py-3 shadow-lg hover:shadow-2xl hover:duration-200 hover:font-semibold hover:-translate-y-1 ease-out">Learn More</button>
+          {/* <button className="px-4 py-2 bg-black text-white rounded-xl my-4 md:mx-10 md:px-6 md:py-3 shadow-lg hover:shadow-2xl hover:duration-200 hover:font-semibold hover:-translate-y-1 ease-out">Learn More</button> */}
+          <div>
+            <HeroBtn />
+          </div>
           <div className="flex justify-evenly gap-4  md:p-5 md:mt-10">
             <SvgAudioPhile />
             <SvgAudioPhile />
