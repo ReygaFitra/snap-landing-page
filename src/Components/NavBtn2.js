@@ -1,13 +1,13 @@
+import React from 'react';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 
-const NavBtn = ({ title, arrow }) => {
+const NavBtn2 = ({ title2, arrow2 }) => {
   const links = [
-    { href: '/todo-list', label: 'Todo List' },
-    { href: '/calender', label: 'Calender' },
-    { href: '/reminders', label: 'Reminders' },
-    { href: '/planing', label: 'Planing' },
+    { href: '/history', label: 'History' },
+    { href: '/our-team', label: 'Our Team' },
+    { href: '/blog', label: 'Blog' },
   ];
 
   return (
@@ -15,7 +15,7 @@ const NavBtn = ({ title, arrow }) => {
       <div>
         <Menu as="div" className="relative">
           <Menu.Button className="flex items-center hover:text-black duration-200 text-[#B2B2B2]">
-            {title}
+            {title2}
             <MdOutlineKeyboardArrowDown className="group-hover:translate-y-[0.18rem] duration-100 ease-out" />
           </Menu.Button>
           <Transition
@@ -44,4 +44,4 @@ const NavBtn = ({ title, arrow }) => {
   );
 };
 
-export default NavBtn;
+export default NavBtn2;

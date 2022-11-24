@@ -19,7 +19,7 @@ const HeroBtn = () => {
       {transition((styles, item) =>
         item ? (
           <AlertDialog.Portal>
-            <AlertDialog.Overlay className="inset-0 fixed bg-[rgba(0,0,0,0.35)]" forceMount />
+            <AlertDialog.Overlay className="inset-0 fixed bg-black/50" forceMount />
             <animated.div
               style={{
                 opacity: styles.opacity,

@@ -1,13 +1,13 @@
 import React from 'react';
 import { RiMenuFill } from 'react-icons/ri';
 import NavBtn from './NavBtn';
+import NavBtn2 from './NavBtn2';
 import SvgLogo from './SvgLogo';
 
 const Navbar = () => {
-  const buttons = [
-    { title: 'Features', arrow: true },
-    { title: 'Company', arrow: true },
-  ];
+  const buttons = [{ title: 'Features', arrow: true }];
+
+  const buttons2 = [{ title2: 'Company', arrow2: true }];
 
   return (
     <div className="container max-w-[100%] flex justify-between md:justify-evenly lg:justify-between md:px-8 md:py-2 items-center md:fixed">
@@ -17,6 +17,10 @@ const Navbar = () => {
         <ul className="hidden md:flex space-x-4 pl-10">
           {buttons.map((button) => (
             <NavBtn title={button.title} arrow={button.arrow} />
+          ))}
+
+          {buttons2.map((button2) => (
+            <NavBtn2 title2={button2.title2} arrow2={button2.arrow2} />
           ))}
           <div>
             <a href="#" className="font-bold drop-shadow-sm hover:text-black duration-200 text-[#B2B2B2]">
