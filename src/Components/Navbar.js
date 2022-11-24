@@ -10,7 +10,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="w-[100vw] flex justify-between md:justify-evenly lg:justify-between md:px-8 md:py-2 items-center">
+    <div className="container max-w-[100%] flex justify-between md:justify-evenly lg:justify-between md:px-8 md:py-2 items-center md:fixed">
       {/* left */}
       <div className="relative p-4 items-center flex md:w-auto md:h-3">
         <SvgLogo className="object-cover cursor-pointer" />

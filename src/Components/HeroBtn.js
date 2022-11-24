@@ -1,7 +1,6 @@
 import React from 'react';
 import * as AlertDialog from '@radix-ui/react-alert-dialog';
 import { useTransition, animated, config } from 'react-spring';
-import { useState } from 'react';
 
 const HeroBtn = () => {
   const [open, setOpen] = React.useState(false);

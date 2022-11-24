@@ -11,21 +11,22 @@ const Hero = () => {
   const textContents = [{ title: 'Make Remote Work', content: 'Get your team in sync. No matter your location. streamline the processes. Create team rituals. and Watch productivity soar' }];
 
   return (
-    <div className="box-border">
+    <main className="container max-w-[100%] mx-auto box-border">
       <div className="md:hidden">
         <img src={heroMobile} />
       </div>
 
-      <div className="text-center md:text-start md:py-0 md:flex md:w-[100%] md:h-[100vh] md:px-5 box-border">
-        <div className="md:w-[100%] md:py-32 ">
+      <div className="text-center md:text-start md:py-0 md:flex md:w-[90%] md:h-screen mx-auto md:px-5 box-border">
+        <div className="md:w-screen md:h-auto md:my-44 md:py-7 box-border">
           {textContents.map((textContent) => (
             <TextContents title={textContent.title} content={textContent.content} />
           ))}
-          {/* <button className="px-4 py-2 bg-black text-white rounded-xl my-4 md:mx-10 md:px-6 md:py-3 shadow-lg hover:shadow-2xl hover:duration-200 hover:font-semibold hover:-translate-y-1 ease-out">Learn More</button> */}
-          <div>
+
+          <div className="md:py-5">
             <HeroBtn />
           </div>
-          <div className="flex justify-evenly gap-4  md:p-5 md:mt-10">
+
+          <div className="flex justify-evenly gap-4  md:p-5">
             <SvgAudioPhile />
             <SvgAudioPhile />
             <SvgMeet />
@@ -36,7 +37,7 @@ const Hero = () => {
           <img src={heroDesktop} className="object-cover hover:scale-95 duration-200" />
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 
