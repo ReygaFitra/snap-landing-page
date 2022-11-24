@@ -1,6 +1,6 @@
 // import React, { useState } from 'react';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
-import { Menu } from '@headlessui/react';
+import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 
 const NavBtn = ({ title, arrow }) => {
@@ -22,18 +22,26 @@ const NavBtn = ({ title, arrow }) => {
             {title}
             <MdOutlineKeyboardArrowDown className="group-hover:translate-y-[0.18rem] duration-100 ease-out" />
           </Menu.Button>
-          <Menu.Items className="absolute top-full w-60 bg-white shadow-lg flex flex-col">
-            {links.map((link) => (
-              /* Use the `active` state to conditionally style the active item. */
-              <Menu.Item key={link.href} as={Fragment} className="p-2 border-b-2 hover:bg-black hover:text-white">
-                {({ active }) => (
-                  <a href={link.href} className={`${active ? 'bg-blue-500 text-white' : 'bg-white text-black'}`}>
-                    {link.label}
-                  </a>
-                )}
-              </Menu.Item>
-            ))}
-          </Menu.Items>
+          <Transition
+            enter="transition duration-100 ease-out"
+            enterFrom="transform scale-95 opacity-0"
+            enterTo="transform scale-100 opacity-100"
+            leave="transition duration-75 ease-out"
+            leaveFrom="transform scale-100 opacity-100"
+            leaveTo="transform scale-95 opacity-0"
+          >
+            <Menu.Items className="absolute top-full w-60 bg-white shadow-lg flex flex-col">
+              {links.map((link) => (
+                <Menu.Item key={link.href} as={Fragment} className="p-2 border-b-2 hover:bg-black hover:text-white">
+                  {({ active }) => (
+                    <a href={link.href} className={`${active ? 'bg-blue-500 text-white' : 'bg-white text-black'}`}>
+                      {link.label}
+                    </a>
+                  )}
+                </Menu.Item>
+              ))}
+            </Menu.Items>
+          </Transition>
         </Menu>
       </div>
     </div>
