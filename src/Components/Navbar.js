@@ -1,5 +1,6 @@
 import React from 'react';
 import { RiMenuFill } from 'react-icons/ri';
+import AuthBtn from './AuthBtn';
 import NavBtn from './NavBtn';
 import NavBtn2 from './NavBtn2';
 import SvgLogo from './SvgLogo';
@@ -40,7 +41,7 @@ const Navbar = () => {
         <RiMenuFill className="w-7 h-7" />
       </div>
       <div className="hidden md:flex space-x-4 font-semibold drop-shadow-sm">
-        <button className="py-2 px-3 text-[#B2B2B2] hover:text-lg hover:text-black hover:font-bold duration-200">Log in</button>
+        <AuthBtn />
         <button className="py-2 px-3 text-black rounded-xl border-2 border-black hover:bg-black hover:text-white duration-200 ease-in">Register</button>
       </div>
     </div>
