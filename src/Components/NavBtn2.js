@@ -11,12 +11,12 @@ const NavBtn2 = ({ title2, arrow2 }) => {
   ];
 
   return (
-    <div className="flex items-center group cursor-pointer font-bold drop-shadow-sm ">
+    <div className="flex items-center group cursor-pointer font-semibold drop-shadow-sm ">
       <div>
         <Menu as="div" className="relative">
           <Menu.Button className="flex items-center hover:text-black duration-200 text-[#B2B2B2]">
             {title2}
-            <MdOutlineKeyboardArrowDown className="group-hover:translate-y-[0.18rem] duration-100 ease-out" />
+            <MdOutlineKeyboardArrowDown className="group-hover:translate-y-[0.18rem] group-hover:rotate-180 duration-100 ease-out" />
           </Menu.Button>
           <Transition
             enter="transition duration-100 ease-out"

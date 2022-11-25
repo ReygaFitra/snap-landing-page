@@ -23,12 +23,12 @@ const Navbar = () => {
             <NavBtn2 title2={button2.title2} arrow2={button2.arrow2} />
           ))}
           <div>
-            <a href="#" className="font-bold drop-shadow-sm hover:text-black duration-200 text-[#B2B2B2]">
+            <a href="#" className="font-semibold drop-shadow-sm hover:text-black duration-200 text-[#B2B2B2]">
               Careers
             </a>
           </div>
           <div>
-            <a href="#" className="font-bold drop-shadow-sm hover:text-black duration-200 text-[#B2B2B2]">
+            <a href="#" className="font-semibold drop-shadow-sm hover:text-black duration-200 text-[#B2B2B2]">
               About
             </a>
           </div>

@@ -1,50 +1,31 @@
 import React from 'react';
-import * as AlertDialog from '@radix-ui/react-alert-dialog';
-import { useTransition, animated, config } from 'react-spring';
+import { useState, Fragment } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
 
 const HeroBtn = () => {
-  const [open, setOpen] = React.useState(false);
-  const transition = useTransition(open, {
-    from: { opacity: 0, y: -10 },
-    enter: { opacity: 1, y: 0 },
-    leave: { opacity: 0, y: 10 },
-    config: config.stiff,
-  });
+  let [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <AlertDialog.Root open={open} onOpenChange={setOpen}>
-      <AlertDialog.Trigger asChild>
-        <button className="bg-black text-white rounded-xl py-3 px-7 inline-flex my-3 md:ml-10 hover:-translate-y-1 duration-100">Learn More</button>
-      </AlertDialog.Trigger>
-      {transition((styles, item) =>
-        item ? (
-          <AlertDialog.Portal>
-            <AlertDialog.Overlay className="inset-0 fixed bg-black/50" forceMount />
-            <animated.div
-              style={{
-                opacity: styles.opacity,
-              }}
-            />
-            <div className="flex justify-center">
-              <AlertDialog.Content className="top-40 right-5 md:right-16 m-auto w-[90vw] max-w[500px] max-h-[85vh] fixed h-auto bg-white shadow-xl p-5 flex flex-wrap flex-col justify-center items-center rounded" forceMount asChild>
-                <animated.div style={styles}>
-                  <AlertDialog.Title className="font-bold text-xl py-3">In Development!</AlertDialog.Title>
-                  <AlertDialog.Description className="font-semibold text-slate-400 py-2">Coming Soon...</AlertDialog.Description>
-                  <div className="flex gap-4 m-5">
-                    <AlertDialog.Cancel>
-                      <button className="bg-red-200 hover:bg-red-300 text-red-500 duration-100 font-semibold py-2 px-7 rounded inline-flex">Cancel</button>
-                    </AlertDialog.Cancel>
-                    <AlertDialog.Action>
-                      <button className="bg-emerald-200 hover:bg-emerald-300 font-semibold text-emerald-500 duration-100 py-2 px-7 rounded inline-flex">Confirm</button>
-                    </AlertDialog.Action>
-                  </div>
-                </animated.div>
-              </AlertDialog.Content>
-            </div>
-          </AlertDialog.Portal>
-        ) : null
-      )}
-    </AlertDialog.Root>
+    <div className="flex">
+      <button onClick={() => setIsOpen(true)} className="bg-black text-white rounded-xl py-3 px-7 inline-flex hover:-translate-y-1 duration-100 md:ml-10 mx-auto mb-2">
+        Clcik Me!
+      </button>
+      <Transition show={isOpen} enter="transition" enterFrom="opacity-0 duration-300" enterTo="opacity-100 duration-300" leave="transition" leaveFrom="opacity-100 duration-300" leaveTo="opacity-0 duration-300" as={Fragment}>
+        <Dialog as="div" open={isOpen} onClose={() => setIsOpen(false)} className="fixed inset-0 flex items-center justify-center">
+          <Dialog.Overlay className="fixed inset-0 bg-black/50" />
+          <Dialog.Panel className="min-w-[80%] max-w-[80%] md:min-w-[40%] max-w-[65%] p-8 rounded bg-white shadow-lg z-10">
+            <Dialog.Title className="font-bold text-xl py-3">In Development!!!</Dialog.Title>
+            <Dialog.Description className="font-semibold text-slate-400 py-2">Coming Soon...</Dialog.Description>
+            <button onClick={() => setIsOpen(false)} className="bg-red-200 text-red-400 font-semibold py-2 px-3 rounded mr-1 hover:bg-red-100 duration-100">
+              Cancel
+            </button>
+            <button onClick={() => setIsOpen(false)} className="bg-emerald-200 text-emerald-400 font-semibold py-2 px-3 rounded inline-flex ml-1 hover:bg-emerald-100 duration-100">
+              Confirm
+            </button>
+          </Dialog.Panel>
+        </Dialog>
+      </Transition>
+    </div>
   );
 };
 
