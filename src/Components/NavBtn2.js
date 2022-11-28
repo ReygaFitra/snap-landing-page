@@ -28,7 +28,7 @@ const NavBtn2 = ({ title2, arrow2 }) => {
           >
             <Menu.Items className="absolute top-full -right-0 w-36 bg-white shadow-2xl rounded flex flex-col">
               {links.map((link) => (
-                <Menu.Item key={link.href} as={Fragment} className="p-2 hover:bg-black hover:text-white rounded">
+                <Menu.Item key={link.href} className="p-2 hover:bg-black hover:text-white rounded">
                   {({ active }) => (
                     <a href={link.href} className={`${active ? 'bg-blue-500 text-white' : 'bg-white text-black'}`}>
                       {link.label}

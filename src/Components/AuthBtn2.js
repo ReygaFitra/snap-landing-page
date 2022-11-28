@@ -3,7 +3,7 @@ import { useState, Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { Tab } from '@headlessui/react';
 
-const AuthBtn = () => {
+const AuthBtn2 = () => {
   let [isOpen, setIsOpen] = React.useState(false);
 
   let title = {
@@ -13,15 +13,15 @@ const AuthBtn = () => {
 
   return (
     <div className="flex">
-      <button onClick={() => setIsOpen(true)} className="py-2 px-3 w-full  text-[#B2B2B2] hover:text-lg hover:text-black hover:font-bold duration-200">
-        {title.login}
+      <button onClick={() => setIsOpen(true)} className="py-2 px-3 text-black rounded-xl border-2 w-full border-black hover:bg-black hover:text-white duration-200 ease-in">
+        {title.regis}
       </button>
       <Transition show={isOpen} enter="transition" enterFrom="opacity-0 duration-300" enterTo="opacity-100 duration-300" leave="transition" leaveFrom="opacity-100 duration-300" leaveTo="opacity-0 duration-300" as={Fragment}>
         <Dialog as="div" open={isOpen} onClose={() => setIsOpen(false)} className="fixed inset-0 flex items-center justify-center">
           <Dialog.Overlay className="fixed inset-0 bg-black/50" />
           <Dialog.Panel className="min-w-[80%] max-w-[80%] md:min-w-[45%] md:max-w-[45%] max-h-[100%] p-14 rounded z-10">
             {/* Tab start */}
-            <Tab.Group>
+            <Tab.Group defaultIndex={1}>
               <Tab.List className="space-x-1 flex justify-center py-1 px-1 rounded-xl bg-white">
                 <div>
                   <Tab className={({ selected }) => `${selected ? 'bg-yellow-500 text-black font-semibold' : 'bg-yellow-50 text-yellow-500 font-semibold'} py-2 px-6 md:px-24 rounded-l-xl`}>
@@ -87,4 +87,4 @@ const AuthBtn = () => {
   );
 };
 
-export default AuthBtn;
+export default AuthBtn2;

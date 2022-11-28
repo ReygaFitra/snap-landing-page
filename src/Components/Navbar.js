@@ -1,6 +1,8 @@
 import React from 'react';
 import { RiMenuFill } from 'react-icons/ri';
 import AuthBtn from './AuthBtn';
+import AuthBtn2 from './AuthBtn2';
+import HumbergerMenu from './HumbergerMenu';
 import NavBtn from './NavBtn';
 import NavBtn2 from './NavBtn2';
 import SvgLogo from './SvgLogo';
@@ -38,11 +40,18 @@ const Navbar = () => {
 
       {/* rigth */}
       <div className="md:hidden p-2">
-        <RiMenuFill className="w-7 h-7" />
+        {/* <button>
+          <RiMenuFill className="w-7 h-7" />
+        </button> */}
+        <HumbergerMenu />
       </div>
       <div className="hidden md:flex space-x-4 font-semibold drop-shadow-sm">
-        <AuthBtn />
-        <button className="py-2 px-3 text-black rounded-xl border-2 border-black hover:bg-black hover:text-white duration-200 ease-in">Register</button>
+        <>
+          <AuthBtn />
+        </>
+        <>
+          <AuthBtn2 />
+        </>
       </div>
     </div>
   );

@@ -32,7 +32,7 @@ const NavBtn = ({ title, arrow }) => {
           >
             <Menu.Items className="absolute top-full -right-0 w-40 bg-white shadow-2xl rounded flex flex-col">
               {links.map((link) => (
-                <Menu.Item key={link.href} as={Fragment} className="p-2 hover:bg-black hover:text-white rounded flex items-center justify-start gap-2">
+                <Menu.Item key={link.href} className="p-2 hover:bg-black hover:text-white rounded flex items-center justify-start gap-2">
                   {({ active }) => (
                     <a href={link.href} className={`${active ? 'bg-blue-500 text-white' : 'bg-white text-black'}`}>
                       <li>{link.logo}</li>
