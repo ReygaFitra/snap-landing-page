@@ -9,9 +9,42 @@ import SvgReminders from './SvgReminders';
 import SvgPlan from './SvgPlan';
 import AuthBtn from './AuthBtn';
 import AuthBtn2 from './AuthBtn2';
+import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 
 const HumbergerMenu = () => {
   let [isOpen, setIsOpen] = useState(false);
+
+  let navTitle = {
+    features: 'Features',
+    company: 'Company',
+  };
+
+  let links = [
+    { href: '/todo-list', logo: <SvgTodo />, label: 'Todo List' },
+    { href: '/calender', logo: <SvgCalender />, label: 'Calender' },
+    { href: '/reminders', logo: <SvgReminders />, label: 'Reminders' },
+    { href: '/planing', logo: <SvgPlan />, label: 'Planing' },
+  ];
+
+  const links2 = [
+    { href: '/history', label: 'History' },
+    { href: '/our-team', label: 'Our Team' },
+    { href: '/blog', label: 'Blog' },
+  ];
+
+  let linkList = links.map((link) => (
+    <a href={link.href} className="flex list-none py-1 items-center gap-2 font-semibold drop-shadow-sm hover:text-black duration-200 text-[#B2B2B2]">
+      <li>{link.logo}</li>
+      <li>{link.label}</li>
+    </a>
+  ));
+
+  let linkList2 = links2.map((link2) => (
+    <a href={link2.href} className="flex list-none py-1 items-center gap-2 font-semibold drop-shadow-sm hover:text-black duration-200 text-[#B2B2B2]">
+      <li>{link2.logo}</li>
+      <li>{link2.label}</li>
+    </a>
+  ));
 
   return (
     <div className="flex">
@@ -26,23 +59,29 @@ const HumbergerMenu = () => {
             <Disclosure>
               {({ open }) => (
                 <div>
-                  <Disclosure.Button className="py-2">Features</Disclosure.Button>
-                  <Disclosure.Panel className="text-gray-500"></Disclosure.Panel>
+                  <Disclosure.Button className="py-2 flex group items-center gap-1 font-semibold">
+                    {navTitle.features}
+                    <MdOutlineKeyboardArrowDown className="group-hover:translate-y-[0.18rem] group-hover:rotate-180 duration-100 ease-out" />
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="text-gray-500">{linkList}</Disclosure.Panel>
                 </div>
               )}
             </Disclosure>
             <Disclosure>
               {({ open }) => (
                 <div>
-                  <Disclosure.Button className="py-2">Company</Disclosure.Button>
-                  <Disclosure.Panel className="text-gray-500"></Disclosure.Panel>
+                  <Disclosure.Button className="py-2 flex group items-center gap-1 font-semibold">
+                    {navTitle.company}
+                    <MdOutlineKeyboardArrowDown className="group-hover:translate-y-[0.18rem] group-hover:rotate-180 duration-100 ease-out" />
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="text-gray-500">{linkList2}</Disclosure.Panel>
                 </div>
               )}
             </Disclosure>
-            <div>
+            <div className="font-semibold">
               <a href="#">Careers</a>
             </div>
-            <div>
+            <div className="font-semibold">
               <a href="#">About</a>
             </div>
             <>

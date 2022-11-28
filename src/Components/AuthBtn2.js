@@ -13,7 +13,7 @@ const AuthBtn2 = () => {
 
   return (
     <div className="flex">
-      <button onClick={() => setIsOpen(true)} className="py-2 px-3 text-black rounded-xl border-2 w-full border-black hover:bg-black hover:text-white duration-200 ease-in">
+      <button onClick={() => setIsOpen(true)} className="py-2 px-3 text-black rounded-xl border-2 w-full font-semibold border-black hover:bg-black hover:text-white duration-200 ease-in">
         {title.regis}
       </button>
       <Transition show={isOpen} enter="transition" enterFrom="opacity-0 duration-300" enterTo="opacity-100 duration-300" leave="transition" leaveFrom="opacity-100 duration-300" leaveTo="opacity-0 duration-300" as={Fragment}>
