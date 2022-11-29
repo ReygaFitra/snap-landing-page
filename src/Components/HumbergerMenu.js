@@ -10,6 +10,7 @@ import SvgPlan from './SvgPlan';
 import AuthBtn from './AuthBtn';
 import AuthBtn2 from './AuthBtn2';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
+import SvgHmbClose from './SvgHmbClose';
 
 const HumbergerMenu = () => {
   let [isOpen, setIsOpen] = useState(false);
@@ -51,10 +52,16 @@ const HumbergerMenu = () => {
       <button onClick={() => setIsOpen(true)}>
         <SvgHumburgerMenu />
       </button>
-      <Transition show={isOpen} enter="transition" enterFrom="opacity-0 duration-300" enterTo="opacity-100 duration-300" leave="transition" leaveFrom="opacity-100 duration-300" leaveTo="opacity-0 duration-300" as={Fragment}>
+      <Transition show={isOpen} as={Fragment} enter="transition" enterFrom="opacity-0 duration-300" enterTo="opacity-100 duration-300" leave="transition" leaveFrom="opacity-100 duration-300" leaveTo="opacity-0 duration-300">
         <Dialog as="div" open={isOpen} onClose={() => setIsOpen(false)} className="fixed inset-0 flex items-center justify-end">
           <Dialog.Overlay className="fixed inset-0 bg-black/50" />
           <Dialog.Panel className="min-w-[60%] max-w-[60%] h-screen p-8 rounded bg-white shadow-lg z-10">
+            <div className="flex justify-end">
+              <button onClick={() => setIsOpen(false)} className="mb-10">
+                <SvgHmbClose />
+              </button>
+            </div>
+
             {/* Disclosure Start */}
             <Disclosure>
               {({ open }) => (
@@ -78,10 +85,10 @@ const HumbergerMenu = () => {
                 </div>
               )}
             </Disclosure>
-            <div className="font-semibold">
+            <div className="font-semibold py-1">
               <a href="#">Careers</a>
             </div>
-            <div className="font-semibold">
+            <div className="font-semibold py-1">
               <a href="#">About</a>
             </div>
             <>

@@ -19,7 +19,7 @@ const AuthBtn = () => {
       <Transition show={isOpen} enter="transition" enterFrom="opacity-0 duration-300" enterTo="opacity-100 duration-300" leave="transition" leaveFrom="opacity-100 duration-300" leaveTo="opacity-0 duration-300" as={Fragment}>
         <Dialog as="div" open={isOpen} onClose={() => setIsOpen(false)} className="fixed inset-0 flex items-center justify-center">
           <Dialog.Overlay className="fixed inset-0 bg-black/50" />
-          <Dialog.Panel className="min-w-[80%] max-w-[80%] md:min-w-[45%] md:max-w-[45%] max-h-[100%] p-14 rounded z-10">
+          <Dialog.Panel className="min-w-[90%] max-w-[90%] md:min-w-[45%] md:max-w-[45%] max-h-[100%] p-14 rounded z-10">
             {/* Tab start */}
             <Tab.Group>
               <Tab.List className="space-x-1 flex justify-center py-1 px-1 rounded-xl bg-white">
